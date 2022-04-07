@@ -1,0 +1,15 @@
+D:\unityPro\DarkGod\DarkGod\Server\Server\PEProtocol\bin\Debug\PEProtocol.dll
+D:\unityPro\DarkGod\DarkGod\Server\Server\PEProtocol\bin\Debug\PEProtocol.pdb
+D:\unityPro\DarkGod\DarkGod\Server\Server\PEProtocol\bin\Debug\PESocket.dll
+D:\unityPro\DarkGod\DarkGod\Server\Server\PEProtocol\obj\Debug\PEProtocol.csproj.CoreCompileInputs.cache
+D:\unityPro\DarkGod\DarkGod\Server\Server\PEProtocol\obj\Debug\PEProtocol.csproj.CopyComplete
+D:\unityPro\DarkGod\DarkGod\Server\Server\PEProtocol\obj\Debug\PEProtocol.dll
+D:\unityPro\DarkGod\DarkGod\Server\Server\PEProtocol\obj\Debug\PEProtocol.pdb
+D:\unityPro\DarkGod\DarkGod\Client\Assets\Scripts\Net\PEProtocol.dll
+D:\unityPro\DarkGod\DarkGod\Client\Assets\Scripts\Net\PEProtocol.pdb
+D:\UnityProject\DarkKing\Client\Assets\Scripts\Net\PEProtocol.dll
+D:\UnityProject\DarkKing\Client\Assets\Scripts\Net\PEProtocol.pdb
+D:\UnityProject\DarkKing\Server\Server\PEProtocol\obj\Debug\PEProtocol.csproj.CoreCompileInputs.cache
+D:\UnityProject\DarkKing\Server\Server\PEProtocol\obj\Debug\PEProtocol.csproj.CopyComplete
+D:\UnityProject\DarkKing\Server\Server\PEProtocol\obj\Debug\PEProtocol.dll
+D:\UnityProject\DarkKing\Server\Server\PEProtocol\obj\Debug\PEProtocol.pdb
