@@ -319,6 +319,7 @@
     <Compile Include="Assets\Scripts\UIWindow\InfoWnd.cs" />
     <Compile Include="Assets\Scripts\UIWindow\LoadingWnd.cs" />
     <Compile Include="Assets\Scripts\UIWindow\LoginWnd.cs" />
+    <Compile Include="Assets\TestScripts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Compond\MakeChar\Shader\MogoFakeLight.shader" />
@@ -327,6 +328,7 @@
     <None Include="Assets\Compond\Shader\MogoSkybox.shader" />
     <None Include="Assets\Compond\Shader\MonsterShader.shader" />
     <None Include="Assets\Compond\Shader\Mul-skybox.shader" />
+    <None Include="Assets\Resources\ResCfgs\guide.xml" />
     <None Include="Assets\Resources\ResCfgs\map.xml" />
     <None Include="Assets\Resources\ResCfgs\rdname.xml" />
   </ItemGroup>

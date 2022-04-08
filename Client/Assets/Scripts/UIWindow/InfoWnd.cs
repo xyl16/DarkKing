@@ -91,7 +91,8 @@ public class InfoWnd : WindowRoot {
 
     public void ClickCloseBtn() {
         audioSvc.PlayUIAudio(Constants.UIClickBtn);
-        MainCitySys.Instance.CloseInfoWnd();
+        //MainCitySys.Instance.CloseInfoWnd();
+        SetWndState(false);
     }
     public void ClickDetailBtn() {
         audioSvc.PlayUIAudio(Constants.UIClickBtn);

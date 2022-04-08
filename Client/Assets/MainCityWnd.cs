@@ -86,15 +86,16 @@ public class MainCityWnd : WindowRoot {
         }
         #endregion
 
-        ////设置自动任务图标
-        //curtTaskData = resSvc.GetAutoGuideData(pd.guideid);
-        //if (curtTaskData != null) {
-        //    SetGuideBtnIcon(curtTaskData.npcID);
-        //}
-        //else {
-        //    SetGuideBtnIcon(-1);
-        //}
-
+        //设置自动任务图标
+        curtTaskData = resSvc.GetAutoGuideData(pd.guideid);
+        if (curtTaskData != null)
+        {
+            SetGuideBtnIcon(curtTaskData.npcID);
+        }
+        else
+        {
+            SetGuideBtnIcon(-1);
+        }
     }
 
     private void SetGuideBtnIcon(int npcID) {

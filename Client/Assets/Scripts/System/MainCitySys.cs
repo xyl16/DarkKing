@@ -44,14 +44,16 @@ public class MainCitySys : SystemRoot {
             //播放主城背景音乐
             audioSvc.PlayBGMusic(Constants.BGMainCity);
 
-            //GameObject map = GameObject.FindGameObjectWithTag("MapRoot");
-            //MainCityMap mcm = map.GetComponent<MainCityMap>();
-            //npcPosTrans = mcm.NpcPosTrans;
+            GameObject map = GameObject.FindGameObjectWithTag("MapRoot");
+            MainCityMap mcm = map.GetComponent<MainCityMap>();
+            npcPosTrans = mcm.NpcPosTrans;
 
-            ////设置人物展示相机
-            //if (charCamTrans != null) {
-            //    charCamTrans.gameObject.SetActive(false);
-            //}
+
+            //设置人物展示相机
+            if (charCamTrans != null)
+            {
+                charCamTrans.gameObject.SetActive(false);
+            }
         });
     }
 
@@ -88,15 +90,16 @@ public class MainCitySys : SystemRoot {
     public void OpenInfoWnd() {
         //StopNavTask();
 
-        //if (charCamTrans == null) {
-        //    charCamTrans = GameObject.FindGameObjectWithTag("CharShowCam").transform;
-        //}
+        if (charCamTrans == null)
+        {
+            charCamTrans = GameObject.FindGameObjectWithTag("CharShowCam").transform;
+        }
 
-        ////设置人物展示相机相对位置
-        //charCamTrans.localPosition = playerCtrl.transform.position + playerCtrl.transform.forward * 3.8f + new Vector3(0, 1.2f, 0);
-        //charCamTrans.localEulerAngles = new Vector3(0, 180 + playerCtrl.transform.localEulerAngles.y, 0);
-        //charCamTrans.localScale = Vector3.one;
-        //charCamTrans.gameObject.SetActive(true);
+        //设置人物展示相机相对位置
+        charCamTrans.localPosition = playerCtrl.transform.position + playerCtrl.transform.forward * 3.8f + new Vector3(0, 1.2f, 0);
+        charCamTrans.localEulerAngles = new Vector3(0, 180 + playerCtrl.transform.localEulerAngles.y, 0);
+        charCamTrans.localScale = Vector3.one;
+        charCamTrans.gameObject.SetActive(true);
         infoWnd.SetWndState();
     }
 

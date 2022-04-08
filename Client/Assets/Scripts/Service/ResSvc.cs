@@ -19,7 +19,7 @@ public class ResSvc : MonoBehaviour {
         Instance = this;
         InitRDNameCfg(PathDefine.RDNameCfg);
         InitMapCfg(PathDefine.MapCfg);
-        //InitGuideCfg(PathDefine.GuideCfg);
+        InitGuideCfg(PathDefine.GuideCfg);
         PECommon.Log("Init ResSvc...");
     }
 

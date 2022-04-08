@@ -30,8 +30,6 @@ public class PathDefine {
     public const string GeneralIcon = "ResImages/npc1";
     public const string ArtisanIcon = "ResImages/npc2";
     public const string TraderIcon = "ResImages/npc3";
-
-
     #endregion
 
     #region Player
