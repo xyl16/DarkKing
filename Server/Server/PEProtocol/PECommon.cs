@@ -30,7 +30,7 @@ public class PECommon
         return ((lv - 1) / 10 * 150 + 150);
     }
 
-    public static int GetExpUpValLv(int lv) {
+    public static int GetExpUpValByLv(int lv) {
         return 100 * lv * lv;
     }
 }

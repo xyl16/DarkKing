@@ -14,6 +14,7 @@ namespace PEProtocol
     {
         None = 0,//无错误
 
+        ServerDataError,//服务器数据异常
         UpdateDBError,//更新数据库失败
 
         AcctIsOnline,//账号已经上线
@@ -26,9 +27,13 @@ namespace PEProtocol
         None = 0,
         //登录相关 100
         ReqLogin = 101,
-        RespLogin = 102,
+        RspLogin = 102,
         ReqRename = 103,
         RspRename = 104,
+
+        //引导相关 200
+        ReqGuide = 201,
+        RspGuide = 202,
     }
 
     [Serializable]
@@ -38,6 +43,8 @@ namespace PEProtocol
         public RspLogin rspLogin;
         public ReqRename reqRename;
         public RspRename rspRename;
+        public ReqGuide ReqGuide;
+        public RspGuide RspGuide;
     }
 
     #region 登录相关
@@ -88,6 +95,22 @@ namespace PEProtocol
         public string name;
     }
 
+    #endregion
+
+    #region 引导相关
+    [Serializable]
+    public class ReqGuide {
+        public int guideid;
+    }
+
+    [Serializable]
+    public class RspGuide
+    {
+        public int guideid;
+        public int coin;
+        public int lv;
+        public int exp;
+    }
     #endregion
 
     public class SrvCfg {

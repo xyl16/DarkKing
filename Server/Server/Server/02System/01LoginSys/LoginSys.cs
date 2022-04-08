@@ -36,7 +36,7 @@ public class LoginSys
         //返回结果给客户端
         GameMsg msg = new GameMsg
         {
-            cmd = (int)CMD.RespLogin,
+            cmd = (int)CMD.RspLogin,
             rspLogin = new RspLogin
             {
 

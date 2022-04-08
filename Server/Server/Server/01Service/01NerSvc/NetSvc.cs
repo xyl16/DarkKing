@@ -10,11 +10,13 @@ using PENet;
 using PEProtocol;
 using System.Collections.Generic;
 
-public class MsgPack {
+public class MsgPack
+{
     public ServerSession session;
     public GameMsg msg;
 
-    public MsgPack(ServerSession session, GameMsg msg) {
+    public MsgPack(ServerSession session, GameMsg msg)
+    {
         this.session = session;
         this.msg = msg;
     }
@@ -55,22 +57,30 @@ public class NetSvc
         }
     }
 
-    public void Update() {
-        if (msgPackQue.Count > 0) {
-            lock (obj) {
+    public void Update()
+    {
+        if (msgPackQue.Count > 0)
+        {
+            lock (obj)
+            {
                 MsgPack msg = msgPackQue.Dequeue();
                 HandOutMsg(msg);
             }
         }
     }
 
-    private void HandOutMsg(MsgPack pack) {
-        switch ((CMD)pack.msg.cmd) {
+    private void HandOutMsg(MsgPack pack)
+    {
+        switch ((CMD)pack.msg.cmd)
+        {
             case CMD.ReqLogin:
                 LoginSys.Ins.ReqLogin(pack);
                 break;
             case CMD.ReqRename:
                 LoginSys.Ins.ReqRename(pack);
+                break;
+            case CMD.ReqGuide:
+                GuideSys.Ins.ReqGuide(pack);
                 break;
         }
     }

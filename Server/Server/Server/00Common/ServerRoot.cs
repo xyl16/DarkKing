@@ -26,9 +26,11 @@ public class ServerRoot
         //服务层
         NetSvc.Ins.Init();
         CacheSvc.Ins.Init();
+        CfgSvc.Ins.Init();
 
         //业务系统层
         LoginSys.Ins.Init();
+        GuideSys.Ins.Init();
 
     }
 
