@@ -13,3 +13,4 @@ D:\UnityProject\DarkKing\Server\Server\PEProtocol\obj\Debug\PEProtocol.csproj.Co
 D:\UnityProject\DarkKing\Server\Server\PEProtocol\obj\Debug\PEProtocol.csproj.CopyComplete
 D:\UnityProject\DarkKing\Server\Server\PEProtocol\obj\Debug\PEProtocol.dll
 D:\UnityProject\DarkKing\Server\Server\PEProtocol\obj\Debug\PEProtocol.pdb
+D:\UnityProject\DarkKing\Server\Server\PEProtocol\obj\Debug\PEProtocol.csprojAssemblyReference.cache

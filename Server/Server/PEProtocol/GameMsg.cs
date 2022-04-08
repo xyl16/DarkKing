@@ -61,6 +61,8 @@ namespace PEProtocol
         public int dodge;
         public int pierce;
         public int critical;
+
+        public int guideid;
     }
 
     [Serializable]
