@@ -75,10 +75,10 @@ public class NetSvc : MonoBehaviour {
     private void ProcessMsg(GameMsg msg) {
         if (msg.err != (int)ErrorCode.None) {
             switch ((ErrorCode)msg.err) {
-                //case ErrorCode.ServerDataError:
-                //    PECommon.Log("服务器数据异常", LogType.Error);
-                //    GameRoot.AddTips("客户端数据异常");
-                //    break;
+                case ErrorCode.ServerDataError:
+                    PECommon.Log("服务器数据异常", LogType.Error);
+                    GameRoot.AddTips("客户端数据异常");
+                    break;
                 case ErrorCode.UpdateDBError:
                     PECommon.Log("数据库更新异常", LogType.Error);
                     GameRoot.AddTips("网络不稳定");
@@ -93,15 +93,15 @@ public class NetSvc : MonoBehaviour {
             return;
         }
         switch ((CMD)msg.cmd) {
-            case CMD.RespLogin:
+            case CMD.RspLogin:
                 LoginSys.Instance.RspLogin(msg);
                 break;
             case CMD.RspRename:
                 LoginSys.Instance.RspRename(msg);
                 break;
-            //case CMD.RspGuide:
-            //    MainCitySys.Instance.RspGuide(msg);
-            //    break;
+            case CMD.RspGuide:
+                MainCitySys.Instance.RspGuide(msg);
+                break;
         }
     }
 }

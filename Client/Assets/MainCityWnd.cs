@@ -60,7 +60,7 @@ public class MainCityWnd : WindowRoot {
 
 
         #region Expprg
-        int expPrgVal = (int)(pd.exp * 1.0f / PECommon.GetExpUpValLv(pd.lv) * 100);
+        int expPrgVal = (int)(pd.exp * 1.0f / PECommon.GetExpUpValByLv(pd.lv) * 100);
         SetText(txtExpPrg, expPrgVal + "%");
         int index = expPrgVal / 10;
 
@@ -88,14 +88,13 @@ public class MainCityWnd : WindowRoot {
 
         //设置自动任务图标
         curtTaskData = resSvc.GetAutoGuideData(pd.guideid);
-        if (curtTaskData != null)
-        {
+        if (curtTaskData != null) {
             SetGuideBtnIcon(curtTaskData.npcID);
         }
-        else
-        {
+        else {
             SetGuideBtnIcon(-1);
         }
+
     }
 
     private void SetGuideBtnIcon(int npcID) {

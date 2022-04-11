@@ -30,7 +30,7 @@ public class LoginSys : SystemRoot {
         resSvc.AsyncLoadScene(Constants.SceneLogin, () => {
             //加载完成以后再打开注册登录界面
             loginWnd.SetWndState();
-            audioSvc.PlayBGMusic(Constants.UIClickBtn);
+            audioSvc.PlayBGMusic(Constants.BGLogin);
         });
     }
 

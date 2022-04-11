@@ -47,6 +47,7 @@ public class Constants {
     public const int NPCArtisan = 2;
     public const int NPCTrader = 3;
 
+
     //场景名称/ID
     public const string SceneLogin = "SceneLogin";
     public const int MainCityMapID = 10000;

@@ -10,7 +10,8 @@ using PEProtocol;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GuideWnd : WindowRoot {
+public class GuideWnd : WindowRoot
+{
     public Text txtName;
     public Text txtTalk;
     public Image imgIcon;
@@ -20,7 +21,8 @@ public class GuideWnd : WindowRoot {
     private string[] dialogArr;
     private int index;
 
-    protected override void InitWnd() {
+    protected override void InitWnd()
+    {
         base.InitWnd();
 
         pd = GameRoot.Instance.PlayerData;
@@ -31,16 +33,20 @@ public class GuideWnd : WindowRoot {
         SetTalk();
     }
 
-    private void SetTalk() {
+    private void SetTalk()
+    {
         string[] talkArr = dialogArr[index].Split('|');
-        if (talkArr[0] == "0") {
+        if (talkArr[0] == "0")
+        {
             //自己
             SetSprite(imgIcon, PathDefine.SelfIcon);
             SetText(txtName, pd.name);
         }
-        else {
+        else
+        {
             //对话NPC
-            switch (curtTaskData.npcID) {
+            switch (curtTaskData.npcID)
+            {
                 case 0:
                     SetSprite(imgIcon, PathDefine.WiseManIcon);
                     SetText(txtName, "智者");
@@ -69,24 +75,34 @@ public class GuideWnd : WindowRoot {
     }
 
 
-    public void ClickNextBtn() {
-        //audioSvc.PlayUIAudio(Constants.UIClickBtn);
+    public void ClickNextBtn()
+    {
+        audioSvc.PlayUIAudio(Constants.UIClickBtn);
 
-        //index += 1;
-        //if (index == dialogArr.Length) {
-        //    //TODO 发送任务引导完成信息
-        //    GameMsg msg = new GameMsg {
-        //        cmd = (int)CMD.ReqGuide,
-        //        reqGuide = new ReqGuide {
-        //            guideid = curtTaskData.ID
-        //        }
-        //    };
+        index += 1;
+        if (index > dialogArr.Length)
+        {
+            SetWndState(false);
+            return;
+        }
+        if (index == dialogArr.Length)
+        {
+            //todo 发送任务引导完成信息
+            GameMsg msg = new GameMsg
+            {
+                cmd = (int)CMD.ReqGuide,
+                reqGuide = new ReqGuide
+                {
+                    guideid = curtTaskData.ID,
+                }
+            };
 
-        //    netSvc.SendMsg(msg);
-        //    SetWndState(false);
-        //}
-        //else {
-        //    SetTalk();
-        //}
+            NetSvc.Instance.SendMsg(msg);
+            SetWndState(false);
+        }
+        else
+        {
+            SetTalk();
+        }
     }
 }

@@ -66,8 +66,8 @@ public class InfoWnd : WindowRoot {
     private void RefreshUI() {
         PlayerData pd = GameRoot.Instance.PlayerData;
         SetText(txtInfo, pd.name + " LV." + pd.lv);
-        SetText(txtExp, pd.exp + "/" + PECommon.GetExpUpValLv(pd.lv));
-        imgExpPrg.fillAmount = pd.exp * 1.0F / PECommon.GetExpUpValLv(pd.lv);
+        SetText(txtExp, pd.exp + "/" + PECommon.GetExpUpValByLv(pd.lv));
+        imgExpPrg.fillAmount = pd.exp * 1.0F / PECommon.GetExpUpValByLv(pd.lv);
         SetText(txtPower, pd.power + "/" + PECommon.GetPowerLimit(pd.lv));
         imgPowerPrg.fillAmount = pd.power * 1.0F / PECommon.GetPowerLimit(pd.lv);
 
@@ -91,8 +91,7 @@ public class InfoWnd : WindowRoot {
 
     public void ClickCloseBtn() {
         audioSvc.PlayUIAudio(Constants.UIClickBtn);
-        //MainCitySys.Instance.CloseInfoWnd();
-        SetWndState(false);
+        MainCitySys.Instance.CloseInfoWnd();
     }
     public void ClickDetailBtn() {
         audioSvc.PlayUIAudio(Constants.UIClickBtn);
