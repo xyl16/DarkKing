@@ -30,7 +30,7 @@ public class GuideSys
 
     public void ReqGuide(MsgPack pack)
     {
-        ReqGuide data = pack.msg.ReqGuide;
+        ReqGuide data = pack.msg.reqGuide;
 
         GameMsg msg = new GameMsg
         {
@@ -38,18 +38,55 @@ public class GuideSys
         };
 
         PlayerData player = CacheSvc.Ins.GetPlayerDataBySession(pack.session);
+        AutoGuideCfg gc = CfgSvc.Ins.GetAutoGuideData(data.guideid);
 
         //更新任务引导id
         if (data.guideid == player.guideid)
         {
-            //更新玩家数据
             player.guideid += 1;
+
+            //更新玩家数据
+            player.coin += gc.coin;
+            CalExp(player,gc.exp);
+
+            if (!CacheSvc.Ins.UpdatePlayerDBData(player.id,player)) {//更新数据库
+                msg.err = (int)ErrorCode.UpdateDBError;
+            }
+            else {
+                msg.rspGuide = new RspGuide
+                {
+                    guideid = player.guideid,
+                    coin = player.coin,
+                    lv = player.lv,
+                    exp = player.exp,
+                };
+            }
         }
         else
         {
             msg.err = (int)ErrorCode.ServerDataError;
         }
         pack.session.SendMsg(msg);
+    }
+
+    private void CalExp(PlayerData pd,int addExp) {
+        int curLv = pd.lv;
+        int curExp = pd.exp;
+        int restExp = addExp;
+        while (true) {
+            int need = PECommon.GetExpUpValByLv(curLv);
+            if (restExp >= need)
+            {
+                curLv++;
+                curExp = 0;
+                restExp -= need;
+            }
+            else {
+                pd.lv = curLv;
+                pd.exp = curExp + restExp;
+                break;
+            }
+        }
     }
 }
 

@@ -43,8 +43,8 @@ namespace PEProtocol
         public RspLogin rspLogin;
         public ReqRename reqRename;
         public RspRename rspRename;
-        public ReqGuide ReqGuide;
-        public RspGuide RspGuide;
+        public ReqGuide reqGuide;
+        public RspGuide rspGuide;
     }
 
     #region 登录相关
